@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <title>Главная страница</title><!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="css/styles.min.css"><!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
+  </head>
+  <body class="main_page">
+    <script>
+      let marketsConfig = {
+      	defaults: {
+      		market: "USD",
+      		// Market table field by which data will be sorted by default
+      		sorting: "volume", // pair, coin, price, spread, change, high, low, volume
+      		tab: "market", // market, group - generates TABs automatically for markets from a pair or set manually in config.group.markets
+      		mode: "widget", // widget, page
+      		exchange: "https://www.b2bx.exchange/advanced/",
+      	},
+      	//table columns names, phrases and etc
+      	lang: {
+      		markets: "Markets",
+      		alts: "ALTS",
+      		stable: "USDⓈ",
+      		percent: "%",
+      		symbol: "$",
+      		item: "item",
+      		favorites: "Favorites",
+      		pair: "Pair",
+      		coin: "Coin",
+      		price: "Last price",
+      		spread: "Spread",
+      		change: "Change, 24h",
+      		high: "High, 24h",
+      		low: "Low, 24h",
+      		volume: "Volume, 24h",
+      		result: "No result",
+      		loading: "Loading...",
+      		search: "Search",// "Search",
+      		all: "All",// "All",
+      	},
+      	//SignalR link
+      	stagingUrl: "https://b2bx.cloud",
+      	infoUrl: "/marketdata/info/",
+      	frontOfficeUrl: "/frontoffice/api/info",
+      	frontOfficeAssetsUrl: '/frontoffice/api/assets-info',
+      };
+    </script>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__inner">
+          <div class="header__left">
+            <button class="header__burger burger" type="button" aria-label="Меню"><span></span></button><a class="header__lang" href="#">En</a>
+          </div>
+          <div class="header__right"><a class="header__phone" href="tel:+78127161414">
+              <svg class="header__phone-icon" width="12" height="12">
+                <use xlink:href="images/svg/symbol/sprite.svg#altrix_phone"></use>
+              </svg><span>+7 (812) 716-14-14</span></a><a class="header__phone" href="tel:+78002018702"><span>+7 (800) 201-87-02</span></a>
+            <ul class="social header__social">
+              <li class="social__item"><a class="social__link" href="#" target="_blank">
+                  <svg width="18" height="18">
+                    <use xlink:href="images/svg/symbol/sprite.svg#altrix_facebook-square"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link" href="#" target="_blank">
+                  <svg width="18" height="18">
+                    <use xlink:href="images/svg/symbol/sprite.svg#altrix_twitter-square"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link" href="#" target="_blank">
+                  <svg width="18" height="18">
+                    <use xlink:href="images/svg/symbol/sprite.svg#altrix_linkedin"></use>
+                  </svg></a></li>
+              <li class="social__item"><a class="social__link" href="#" target="_blank">
+                  <svg width="23" height="23">
+                    <use xlink:href="images/svg/symbol/sprite.svg#altrix_youtube"></use>
+                  </svg></a></li>
+            </ul><a class="header__login" href="#">
+              <svg width="16" height="16">
+                <use xlink:href="images/svg/symbol/sprite.svg#altrix_login"></use>
+              </svg><span>Личный кабинет</span></a>
+          </div>
+        </div>
+        <section class="aside-menu">
+          <div class="aside-menu__inner"><a class="aside-menu__logo logo" href="index.html"><img src="images/altrix/logo.svg" width="326" height="21" alt=""></a>
+            <ul class="aside-menu__list">
+              <li class="aside-menu__item"> <a class="aside-menu__link aside-menu__link--dropdown" href="#">Информационная безопасность</a>
+                <div class="aside-menu__dropdown dropdown"> 
+                  <ul class="dropdown__list dropdown__list--column">
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="aside-menu__item"> <a class="aside-menu__link aside-menu__link--dropdown" href="#">Информационные технологии</a>
+                <div class="aside-menu__dropdown dropdown"> 
+                  <ul class="dropdown__list dropdown__list--column">
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="aside-menu__item"> <a class="aside-menu__link aside-menu__link--dropdown" href="#">Разработка ПО</a>
+                <div class="aside-menu__dropdown dropdown"> 
+                  <ul class="dropdown__list dropdown__list--column">
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="aside-menu__item"> <a class="aside-menu__link aside-menu__link--dropdown" href="#">Решения под ключ</a>
+                <div class="aside-menu__dropdown dropdown"> 
+                  <ul class="dropdown__list dropdown__list--column">
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="aside-menu__item"> <a class="aside-menu__link aside-menu__link--dropdown" href="#">Каталог</a>
+                <div class="aside-menu__dropdown dropdown"> 
+                  <ul class="dropdown__list dropdown__list--column">
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="aside-menu__item"> <a class="aside-menu__link aside-menu__link--dropdown" href="#">О компании</a>
+                <div class="aside-menu__dropdown dropdown"> 
+                  <ul class="dropdown__list dropdown__list--column">
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                    <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <div class="aside-menu__bottom"><a class="aside-menu__email" href="mailto:Info@altirix.ru"> 
+                <svg width="20" height="16">
+                  <use xlink:href="images/svg/symbol/sprite.svg#altrix_mail"></use>
+                </svg><span>Info@altirix.ru</span></a><a class="aside-menu__phone" href="tel:+78127161414">
+                <svg class="aside-menu__phone-icon" width="20" height="20">
+                  <use xlink:href="images/svg/symbol/sprite.svg#altrix_phone"></use>
+                </svg><span>+7 (812) 716-14-14</span></a><a class="aside-menu__phone" href="tel:+78002018702">
+                <svg class="aside-menu__phone-icon" width="20" height="20">
+                  <use xlink:href="images/svg/symbol/sprite.svg#altrix_phone"></use>
+                </svg><span>+7 (800) 201-87-02</span></a></div>
+          </div>
+        </section>
+      </header>
+      <div class="menu">
+        <div class="menu__container">
+          <div class="menu__start"><a class="menu__logo logo" href="index.html"><img src="images/altrix/logo.svg" width="243" height="15" alt=""></a>
+          </div>
+          <div class="menu__middle">
+            <ul class="menu__list">
+              <li class="menu__item"> <a class="menu__link" href="#">Информационная безопасность</a>
+                <div class="menu__dropdown dropdown"> 
+                  <div class="dropdown__container container">
+                    <div class="dropdown__title"><span>Информационная безопасность</span></div>
+                    <ul class="dropdown__list">
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="menu__item"> <a class="menu__link" href="#">Информационные технологии</a>
+                <div class="menu__dropdown dropdown"> 
+                  <div class="dropdown__container container">
+                    <div class="dropdown__title"><span>Информационные технологии</span></div>
+                    <ul class="dropdown__list">
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="menu__item"> <a class="menu__link" href="#">Разработка ПО</a>
+                <div class="menu__dropdown dropdown"> 
+                  <div class="dropdown__container container">
+                    <div class="dropdown__title"><span>Разработка ПО</span></div>
+                    <ul class="dropdown__list">
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="menu__item"> <a class="menu__link" href="#">Решения под ключ</a>
+                <div class="menu__dropdown dropdown"> 
+                  <div class="dropdown__container container">
+                    <div class="dropdown__title"><span>Решения под ключ</span></div>
+                    <ul class="dropdown__list">
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="menu__item"> <a class="menu__link" href="#">Каталог</a>
+                <div class="menu__dropdown dropdown"> 
+                  <div class="dropdown__container container">
+                    <div class="dropdown__title"><span>Каталог</span></div>
+                    <ul class="dropdown__list">
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="menu__item"> <a class="menu__link" href="#">О компании</a>
+                <div class="menu__dropdown dropdown"> 
+                  <div class="dropdown__container container">
+                    <div class="dropdown__title"><span>О компании</span></div>
+                    <ul class="dropdown__list">
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Блокчейн (Blockchain)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Машинное обучение (Machine learning)</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Безопасность приложений</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Автоматизация бизнес-процессов</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">Заказная разработка</a></li>
+                      <li class="dropdown__item"> <a class="dropdown__link" href="#">DevOps-консалтинг</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__end">
+            <div class="menu__search smart-search smart-search--simple">
+              <button class="smart-search__toggle" type="button">
+                <svg class="smart-search__toggle-loupe" width="17" height="17">
+                  <use xlink:href="images/svg/symbol/sprite.svg#altrix_loupe"></use>
+                </svg>
+                <svg class="smart-search__toggle-close" width="17" height="17">
+                  <use xlink:href="images/svg/symbol/sprite.svg#altrix_close"></use>
+                </svg>
+              </button>
+              <div class="smart-search__form">
+                <form action="#" method="post">
+                  <button class="smart-search__form-tags" type="button">#</button>
+                  <label aria-label="Поиск решений">
+                    <input type="search" name="search" placeholder="Поиск решений...">
+                  </label>
+                  <button type="submit">
+                    <svg width="17" height="17">
+                      <use xlink:href="images/svg/symbol/sprite.svg#altrix_loupe"></use>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main class="site-content" id="content">
+        <div class="content">
+          <div class="index_banner" style="background-image: url(images/index_banner/index_banner.png);">
+            <div class="container">
+              <h2>Проектирование, монтаж и <br>обслуживание инженерных систем</h2>
+            </div>
+          </div>
+          <div class="index_banner-slider-wrapper">
+            <div class="container">
+              <div class="index_banner-slider">
+                <div><a class="index_banner-item quiz-btn-1" href="#">
+                    <svg>
+                      <use xlink:href="images/svg/symbol/sprite.svg#build"></use>
+                    </svg><span>Системы вентиляции</span></a></div>
+                <div><a class="index_banner-item quiz-btn-2" href="#">
+                    <svg>
+                      <use xlink:href="images/svg/symbol/sprite.svg#build"></use>
+                    </svg><span>Отопительные системы</span></a></div>
+                <div><a class="index_banner-item" href="#">
+                    <svg>
+                      <use xlink:href="images/svg/symbol/sprite.svg#build"></use>
+                    </svg><span>системы кондиционирования</span></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="a_company">
+            <div class="container a_company-container">
+              <div class="a_company-content">
+                <h2>Sed ut perspiciatis unde omnis <span class="nowrap">iste natus</span> error sit</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p><a class="more_btn" href="#"><span>подробнее</span>
+                  <svg>
+                    <use xlink:href="images/svg/symbol/sprite.svg#more_btn"></use>
+                  </svg></a>
+                <div class="a_company-catalog">
+                  <div class="a_company-item">
+                    <div class="a_company-number">170</div>
+                    <div class="a_company-desc">выполненных проектов</div>
+                  </div>
+                  <div class="a_company-item">
+                    <div class="a_company-number">55</div>
+                    <div class="a_company-desc">постоянных клиентов</div>
+                  </div>
+                  <div class="a_company-item">
+                    <div class="a_company-number">10</div>
+                    <div class="a_company-desc">монтажных бригад</div>
+                  </div>
+                  <div class="a_company-item">
+                    <div class="a_company-number">11</div>
+                    <div class="a_company-desc">опытных проектировщиков</div>
+                  </div>
+                </div>
+              </div>
+              <picture class="a_company-image">
+                <source srcset="images/a_company/yr-mobile.png" media="(max-width: 1000px)"><img src="images/a_company/12_years.png">
+              </picture>
+            </div>
+          </div>
+          <div class="project">
+            <div class="container">
+              <div class="section_title"><span>Наши<span> проекты</span></span></div>
+            </div>
+            <div class="container project-container">
+              <div class="project-slider">
+                <div>
+                  <div class="project-slider-item"><img class="project-banner" src="images/project/project_banner.jpg" alt="">
+                    <div class="project-content">
+                      <h2>Crossfit club «Banda» <span class="nowrap">на ул. Урловская 26</span></h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p><a class="more_btn" href="#"><span>подробнее</span>
+                        <svg>
+                          <use xlink:href="images/svg/symbol/sprite.svg#more_btn"></use>
+                        </svg></a>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="project-slider-item"><img class="project-banner" src="images/project/project_banner.jpg" alt="">
+                    <div class="project-content">
+                      <h2>Crossfit club «Banda» на ул. Урловская 26</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p><a class="more_btn" href="#"><span>подробнее</span>
+                        <svg>
+                          <use xlink:href="images/svg/symbol/sprite.svg#more_btn"></use>
+                        </svg></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-tools"></div>
+            </div>
+          </div>
+          <div class="stages">
+            <div class="container">
+              <div class="section_title"><span>этапы<span> работы</span></span></div>
+            </div>
+            <div class="stages-catalog">
+              <div class="stages-item">
+                <div class="stages-icon">
+                  <svg>
+                    <use xlink:href="images/svg/symbol/sprite.svg#stages-icon1"></use>
+                  </svg>
+                </div>
+                <div class="stages-text"><span>Изучение объекта</span>
+                  <p>Наш инженер БЕСПЛАТНО приезжает на объект для подробного его изучения и оценки.</p>
+                </div>
+              </div>
+              <div class="stages-item">
+                <div class="stages-icon">
+                  <svg>
+                    <use xlink:href="images/svg/symbol/sprite.svg#stages-icon2"></use>
+                  </svg>
+                </div>
+                <div class="stages-text"><span>Подбор и смета</span>
+                  <p>БЕСПЛАТНО подбираем несколько вариантов оборудования и предоставляем понятную развернутую смету.</p>
+                </div>
+              </div>
+              <div class="stages-item">
+                <div class="stages-icon">
+                  <svg>
+                    <use xlink:href="images/svg/symbol/sprite.svg#stages-icon3"></use>
+                  </svg>
+                </div>
+                <div class="stages-text"><span>Заключение договора</span>
+                  <p>Согласовываем и заключаем договор, прописываем сроки и ответственность.</p>
+                </div>
+              </div>
+              <div class="stages-item">
+                <div class="stages-icon">
+                  <svg>
+                    <use xlink:href="images/svg/symbol/sprite.svg#stages-icon4"></use>
+                  </svg>
+                </div>
+                <div class="stages-text"><span>Разработка проекта</span>
+                  <p>Наш собственный проектный отдел разрабатывает индивидуальный проект.</p>
+                </div>
+              </div>
+              <div class="stages-item">
+                <div class="stages-icon">
+                  <svg>
+                    <use xlink:href="images/svg/symbol/sprite.svg#stages-icon5"></use>
+                  </svg>
+                </div>
+                <div class="stages-text"><span>Доставка материалов</span>
+                  <p>Мы доставляем материалы оборудование на объект в самые кратчайшие сроки</p>
+                </div>
+              </div>
+              <div class="stages-item">
+                <div class="stages-icon">
+                  <svg>
+                    <use xlink:href="images/svg/symbol/sprite.svg#stages-icon6"></use>
+                  </svg>
+                </div>
+                <div class="stages-text"><span>Монтаж систем</span>
+                  <p>Осуществляем монтаж инженерных систем в сроки оговоренные в договоре</p>
+                </div>
+              </div>
+              <div class="stages-item">
+                <div class="stages-icon">
+                  <svg>
+                    <use xlink:href="images/svg/symbol/sprite.svg#stages-icon7"></use>
+                  </svg>
+                </div>
+                <div class="stages-text"><span>Пуско-наладочные работы</span>
+                  <p>Ввод системы в эксплуатацию. Обучаем Ваш персонал. Выдаем паспорта систем вентиляции.</p>
+                </div>
+              </div>
+              <div class="stages-item">
+                <div class="stages-icon">
+                  <svg>
+                    <use xlink:href="images/svg/symbol/sprite.svg#stages-icon8"></use>
+                  </svg>
+                </div>
+                <div class="stages-text"><span>Cервисное обслуживание</span>
+                  <p>Наш сервисно-гарантийный отдел поддерживает безотказную работоспособность оборудования.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="objects">
+            <div class="container">
+              <div class="section_title"><span>расчет<span> стоимости</span></span></div>
+              <div class="objects-catalog">
+                <div class="objects-item" style="background-image: url(images/objects/item1.jpg);">
+                  <div class="objects-text"><span class="objects-title">Жилые дома и квартиры</span><a class="objects-btn" href="#"><span>Рассчитать</span>
+                      <svg>
+                        <use xlink:href="images/svg/symbol/sprite.svg#objects-svg"></use>
+                      </svg></a></div>
+                </div>
+                <div class="objects-item" style="background-image: url(images/objects/item2.jpg);">
+                  <div class="objects-text"><span class="objects-title">Офисы и бизнес-центры </span><a class="objects-btn" href="#"><span>Рассчитать</span>
+                      <svg>
+                        <use xlink:href="images/svg/symbol/sprite.svg#objects-svg"></use>
+                      </svg></a></div>
+                </div>
+                <div class="objects-item" style="background-image: url(images/objects/item3.jpg);">
+                  <div class="objects-text"><span class="objects-title">Торговые центры и магазины</span><a class="objects-btn" href="#"><span>Рассчитать</span>
+                      <svg>
+                        <use xlink:href="images/svg/symbol/sprite.svg#objects-svg"></use>
+                      </svg></a></div>
+                </div>
+                <div class="objects-item" style="background-image: url(images/objects/item4.jpg);">
+                  <div class="objects-text"><span class="objects-title">Рестораны, кафе, кальянные</span><a class="objects-btn" href="#"><span>Рассчитать</span>
+                      <svg>
+                        <use xlink:href="images/svg/symbol/sprite.svg#objects-svg"></use>
+                      </svg></a></div>
+                </div>
+                <div class="objects-item" style="background-image: url(images/objects/item5.jpg);">
+                  <div class="objects-text"><span class="objects-title">Производства и склады</span><a class="objects-btn" href="#"><span>Рассчитать</span>
+                      <svg>
+                        <use xlink:href="images/svg/symbol/sprite.svg#objects-svg"></use>
+                      </svg></a></div>
+                </div>
+                <div class="objects-item" style="background-image: url(images/objects/item6.jpg);">
+                  <div class="objects-text"><span class="objects-title">Отели, больницы, мед. центры</span><a class="objects-btn" href="#"><span>Рассчитать</span>
+                      <svg>
+                        <use xlink:href="images/svg/symbol/sprite.svg#objects-svg"></use>
+                      </svg></a></div>
+                </div>
+                <div class="objects-item" style="background-image: url(images/objects/item7.jpg);">
+                  <div class="objects-text"><span class="objects-title">Бассейны, спа, аква-парки</span><a class="objects-btn" href="#"><span>Рассчитать</span>
+                      <svg>
+                        <use xlink:href="images/svg/symbol/sprite.svg#objects-svg"></use>
+                      </svg></a></div>
+                </div>
+                <div class="objects-item" style="background-image: url(images/objects/item8.jpg);">
+                  <div class="objects-text"><span class="objects-title">Спорткомплексы и фитнес-клубы</span><a class="objects-btn" href="#"><span>Рассчитать</span>
+                      <svg>
+                        <use xlink:href="images/svg/symbol/sprite.svg#objects-svg"></use>
+                      </svg></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="facts" style="background-image: url(images/facts/facts.jpg);">
+            <div class="container facts-container">
+              <div class="section_title"><span>почему<span> нам доверяю</span></span></div>
+            </div>
+            <div class="container facts-slider-wrapper">
+              <div class="facts-slider">
+                <div>
+                  <div class="facts-item">
+                    <div class="facts-icon">1</div>
+                    <div class="facts-text"><span>Четкие сроки реализации</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="facts-item">
+                    <div class="facts-icon">4</div>
+                    <div class="facts-text"><span>Качественные материалы</span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="facts-item">
+                    <div class="facts-icon">2</div>
+                    <div class="facts-text"><span>Опытная команда проектировщиков</span>
+                      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="facts-item">
+                    <div class="facts-icon">5</div>
+                    <div class="facts-text"><span>Выполнение работ под ключ</span>
+                      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="facts-item">
+                    <div class="facts-icon">3</div>
+                    <div class="facts-text"><span>Качественное оборудование</span>
+                      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="facts-item">
+                    <div class="facts-icon">6</div>
+                    <div class="facts-text"><span>Сервисное и гарантийное обслуживание</span>
+                      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clients">
+            <div class="container clients-wrapper">
+              <div class="clients-desc">
+                <div class="section_title"><span>наши<span> клиенты</span></span></div>
+                <h2>От кафе и кальянных до крупных предприятий</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              </div>
+              <div class="clients-content">
+                <div class="clients-item"><img src="images/clients/icon1.png" alt="" style="width:134px"></div>
+                <div class="clients-item"><img src="images/clients/icon2.png" alt="" style="width:149px"></div>
+                <div class="clients-item"><img src="images/clients/icon3.png" alt="" style="width:68px"></div>
+                <div class="clients-item"><img src="images/clients/icon4.png" alt="" style="width:105px"></div>
+                <div class="clients-item"><img src="images/clients/icon5.png" alt="" style="width:47px"></div>
+                <div class="clients-item"><img src="images/clients/icon6.png" alt="" style="width:56px"></div>
+              </div>
+            </div>
+          </div>
+          <div class="articles">
+            <div class="container articles-container">
+              <div class="section_title"><span>полезные<span> статьи</span></span></div>
+            </div>
+            <div class="container">
+              <div class="articles-slider">
+                <div>
+                  <div class="articles-item" style="background-image: url(images/articles/image1.jpg);"><a class="articles-text" href="#"><span>2 декабря 2020</span>
+                      <p>Правильная организация вентиляции в складском помещении</p></a></div>
+                </div>
+                <div>
+                  <div class="articles-item" style="background-image: url(images/articles/image2.jpg);"><a class="articles-text" href="#"><span>2 декабря 2020</span>
+                      <p>Организация системы вентиляции в санузле</p></a></div>
+                </div>
+                <div>
+                  <div class="articles-item" style="background-image: url(images/articles/image3.jpg);"><a class="articles-text" href="#"><span>2 декабря 2020</span>
+                      <p>Как выбрать подрядчика для монтажа инженерных систем</p></a></div>
+                </div>
+              </div><a class="more_btn" href="#"><span>все статьи</span>
+                <svg>
+                  <use xlink:href="images/svg/symbol/sprite.svg#more_btn"></use>
+                </svg></a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__container container">
+          <div class="footer__column"> 
+            <div class="footer__menu">
+              <div class="footer__menu-title">Решение под ключ</div>
+              <ul class="footer__menu-list">
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Защита АСУ ТП</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Сетевая безопасность</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Криптографическая защита</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Мониторинг событий безопасности (SIEM)</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Антивирусная защита</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Управление привелегированными пользователями (IDM)</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Защита от несанкционированного доступа</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Обнаружение и предотвращение вторжений (IDS/IPS)</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Патч-менеджмент</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Управление процессами информационной безопасности</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Киберполигон</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Безопасный удаленный доступ</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Резервное копирование информации</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Реагирование на инциденты (IPR)</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Подключение к ГосСОПКА</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__column"> 
+            <div class="footer__menu">
+              <div class="footer__menu-title">Информационная безопасность</div>
+              <ul class="footer__menu-list">
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Защита критической информационной структуры (187-ФЗ)</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Защита персональных данных (152-ФЗ)</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Защита коммерческой тайны (98-ФЗ)</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Проектирование систем защиты информации</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Атестация информационных систем</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Внедрение средств защиты информации</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Сертификация ПО</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Оценка эффективности защиты информации</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Тестирование на проникновение</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Red Team</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Киберучения</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Аудит информационной безопасности</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Обучение (повышение осведомленности)</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__column"> 
+            <div class="footer__menu">
+              <div class="footer__menu-title">Информационные технологии</div>
+              <ul class="footer__menu-list">
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Корпоративные сети</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Инфраструктурные решения</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Интеллектуальное видеонаблюдение и аналитика</a></li>
+              </ul>
+            </div>
+            <div class="footer__menu">
+              <div class="footer__menu-title">Разработка ПО</div>
+              <ul class="footer__menu-list">
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Блокчейн (Blockchain)</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Машинное обучение (Machine learning)</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Безопасность приложений</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Автоматизация бизнес-процессов</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Заказная разработка</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">DevOps-консалтинг</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__column"> 
+            <div class="footer__menu">
+              <div class="footer__menu-title">О компании</div>
+              <ul class="footer__menu-list">
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Наша миссия</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Контакты</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Лицензия</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Карьера</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Вакансии</a></li>
+                <li class="footer__menu-item"> <a class="footer__menu-link" href="#">Новости</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__links"> <a href="#">Условия обработки персональных данных</a><a href="#">Политика конфиденциальности</a></div>
+          <div class="footer__bottom">
+            <div class="footer__copyright">© Altirix Systems 2010-2021 </div>
+            <div class="footer__info">Адрес обратной связи для сообщений о коррупции: <a href="mailto:doverie@altirix.ru">doverie@altirix.ru</a></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

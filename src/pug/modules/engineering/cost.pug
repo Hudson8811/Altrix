@@ -1,0 +1,17 @@
+section.cost
+    .container.cost__container
+        h3.cost__title Стоимость проектирования <br> вентиляции
+        .cost__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum <br>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo
+        .cost__form-wrapper
+            .cost__form-title Получить коммерческое предложение
+            form.cost__form
+                .cost__form-content
+                    .cost__input-wrapper
+                        +input-name("cost")
+                        .cost__input-group
+                            +input-group("cost")
+                        +input-file("cost")
+                    .cost__textarea-wrapper
+                        +textarea("cost")
+                +condition("cost")
+
