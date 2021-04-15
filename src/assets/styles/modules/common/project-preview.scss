@@ -11,6 +11,10 @@
   background-color: $color-white;
   box-sizing: border-box;
 
+  @include respond-to("tablet") {
+    max-width: none;
+  }
+
   &__image {
     width: 150px;
     height: 150px;

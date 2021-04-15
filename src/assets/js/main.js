@@ -1,8 +1,8 @@
 $(window).on('load', function() {
 
   const projectsCarousel = new Swiper('.__js_projects-carousel', {
-		slidesPerView: 4,
-		spaceBetween: 36,
+		slidesPerView: 'auto',
+		spaceBetween: 20,
 		loop: true,
 		pagination: {
 			el: '.paginate',
@@ -11,7 +11,28 @@ $(window).on('load', function() {
 		navigation: {
 			nextEl: '.nav-btn--next',
 			prevEl: '.nav-btn--prev',
-		}
+		},
+    breakpoints: {
+      // when window width is >= 560px
+      560: {
+        slidesPerView: 2,
+        //spaceBetween: 30
+      },
+      // when window width is >= 992px
+      768: {
+        slidesPerView: 3,
+        //spaceBetween: 36
+      },
+      // when window width is >= 1300px
+      992: {
+        slidesPerView: 4,
+        //spaceBetween: 36
+      },
+      1300: {
+        slidesPerView: 4,
+        spaceBetween: 36
+      }
+    }
   });
 
   const mainSlider = new Swiper('.__js_main-slider', {
@@ -96,6 +117,27 @@ $(window).on('load', function() {
     if ($(window).width() > 560) {
       searchToggle.removeClass(searchToggleClass).next().removeClass(searchToggleClass);
     }
-  })
+  });
 
+  // accordion
+  const accordionItems = $('.accordion-item');
+  const accordionHeadings = $('.accordion-heading');
+  const accordionItemClass = 'is-active';
+  const accordionContent = $('.accordion-content');
+
+  accordionHeadings.on('click', function() {
+    const parent = $(this).parent();
+    const heading = $(this);
+
+
+    if (parent.hasClass(accordionItemClass)) {
+      parent.removeClass(accordionItemClass);
+      heading.next().slideUp();
+    } else {
+      accordionItems.removeClass(accordionItemClass);
+      accordionContent.slideUp();
+      parent.addClass(accordionItemClass);
+      heading.next().slideDown();
+    }
+  });
 });

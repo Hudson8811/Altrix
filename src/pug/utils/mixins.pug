@@ -71,7 +71,7 @@ mixin arrow_btn(title)
 mixin form_btn(text, mod) 
     button.button(type="submit" class=`${mod}__button`)= text
         .button__icon
-            svg.button__arrow
+            svg.button__arrow()
                 use(xlink:href='images/svg/symbol/sprite.svg#arrow')
 
 mixin pack-card(title,desc)
@@ -139,6 +139,11 @@ mixin input-name(mod)
         input(type="text")
         span ФИО
 
+mixin input-company(mod)
+    label.application-form-label(class=`${mod}__input-company`)
+        input(type="text")
+        span Название компании
+
 mixin input-group(mod)
     label.application-form-label(class=`${mod}__input-mail`)
         input(type="email")
@@ -173,6 +178,16 @@ mixin condition(mod)
             span.condition-text(class=`${mod}__condition-text`) Я принимаю условия <br>
                 a.condition-link(href="#") пользовательского соглашения
         +form_btn("отправить",`${mod}`)
+
+mixin condition2(mod)
+    .condition-wrapper(class=`${mod}__condition-wrapper`)
+        .condition(class=`${mod}__condition`)
+            label.condition-label.label
+                input.condition-checkbox(type="checkbox")
+                span.condition-custom-checkbox
+            span.condition-text(class=`${mod}__condition-text`) Я согласен с <a href="#">условиями обработки персональных данных</a> и <a href="#">политикой конфиденциальности</a>
+
+        button.condition-send.button.button--large(type="submit") Отправить
 
 mixin social(arr, className)
     ul.social(class= className)

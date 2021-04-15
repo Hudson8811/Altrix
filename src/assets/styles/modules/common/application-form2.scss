@@ -45,6 +45,10 @@
     display: flex;
     justify-content: space-between;
 
+    @include respond-to("phablet") {
+      flex-direction: column;
+    }
+
     #{$self}-label {
       width: calc(50% - 11px);
 
@@ -66,6 +70,10 @@
       align-self: flex-start;
     }
 
+    @include respond-to("tablet") {
+      flex-direction: column;
+    }
+
     .calc-btn {
       @extend .button;
       display: inline-block;
@@ -77,6 +85,10 @@
       line-height: 1.1;
       text-align: center;
       text-transform: capitalize;
+
+      @include respond-to("tablet") {
+        margin-top: 20px;
+      }
     }
   }
 
