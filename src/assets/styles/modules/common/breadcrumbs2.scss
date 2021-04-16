@@ -4,6 +4,12 @@
   flex-wrap: wrap;
 
   li {
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
     a {
       display: inline-flex;
       font-size: 19px;
@@ -44,9 +50,5 @@
         pointer-events: none;
       }
     }
-  }
-
-  li + li {
-    margin-left: 12px;
   }
 }

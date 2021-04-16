@@ -93,17 +93,36 @@ $(window).on('load', function() {
         btn.next().slideDown();
       }
   });
-  
 
+  // modal
+  const cookieModal = $('.cookie-confirm');
+  const cookieBtn = $('.__js_cookie-confirm');
+  const cookieClass = 'cookie-confirm--active';
+  const madalSelectors = ['.__js_vacancy-modal', '.__js_demo-modal-success-message', '.__js_show-form', '.__js_show-tags'];
 
-  $('.__js_vacancy-modal').fancybox({
-    smallBtn: false,
-    toolbar: false
+  madalSelectors.forEach(function(item) {
+    $(item).fancybox({
+      smallBtn: false,
+      toolbar: false,
+      hideScrollbar: true,
+      touch: false
+    });
   });
 
-  $('.vacancy-card__modal-close').on('click', function() {
+  $('.__js_modal-close').on('click', function() {
     $.fancybox.close();
   });
+  if (localStorage['confirm-cookie'] !== "1") {
+    setTimeout(function() {
+      cookieModal.addClass(cookieClass);
+      localStorage.setItem('confirm-cookie', false);
+    }, 3000);
+
+    cookieBtn.on('click', function() {
+      cookieModal.removeClass(cookieClass);
+      localStorage['confirm-cookie'] = 1;
+    })
+  }
 
   //
   const searchToggle = $('.smart-search__toggle');

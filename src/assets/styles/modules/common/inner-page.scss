@@ -18,9 +18,11 @@
 
     &-wrapper {
       position: relative;
+      margin-top: 62px;
       padding: 130px 0;
 
       @include respond-to("tablet-middle") {
+        margin-top: 32px;
         padding: 70px 0;
       }
 
@@ -107,12 +109,13 @@
   }
 
   &__title {
-    margin: 0 0 32px;
+    margin: 62px 0 32px;
     font-size: 39px;
     line-height: 1.282;
     font-weight: 700;
 
     @include respond-to("tablet-middle") {
+      margin-top: 32px;
       margin-bottom: 20px;
     }
 
@@ -128,18 +131,13 @@
       }
     }
 
-    .share-link {
+    .share-btn {
       margin-left: 10px;
       align-self: baseline;
     }
   }
 
   &__breadcrumbs {
-    margin-bottom: 62px;
-
-    @include respond-to("tablet-middle") {
-      margin-bottom: 32px;
-    }
   }
 
   &__main {

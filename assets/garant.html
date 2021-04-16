@@ -281,7 +281,7 @@
               </button>
               <div class="smart-search__form">
                 <form action="#" method="post">
-                  <button class="smart-search__form-tags" type="button">#</button>
+                  <button class="smart-search__form-tags __js_show-tags" type="button" data-src="#tags">#</button>
                   <label aria-label="Поиск решений">
                     <input type="search" name="search" placeholder="Поиск решений...">
                   </label>
@@ -296,6 +296,10 @@
           </div>
         </div>
       </div>
+      <button class="contact-button __js_show-form" type="button" data-src="#modalForm"><span class="contact-button__icon">
+          <svg width="20" height="20">
+            <use xlink:href="images/svg/symbol/sprite.svg#altrix_phone-arrow"></use>
+          </svg></span><span class="contact-button__text">Связаться</span></button>
       <main class="site-content" id="content">
         <div class="content">
           <div class="services-page project-text">
@@ -401,6 +405,61 @@
           </div>
         </div>
       </footer>
+      <div class="modal" id="modalForm" style="display: none;">
+        <h2 class="modal__title">Связаться с нами</h2>
+        <button class="modal__close __js_modal-close" type="button">
+          <svg width="14" height="14">
+            <use xlink:href="images/svg/symbol/sprite.svg#altrix_close"></use>
+          </svg>
+        </button>
+        <div class="modal__content">
+          <form class="application-form" action="#" method="post">
+            <label class="application-form-label">
+              <input type="text"><span>ФИО</span>
+            </label>
+            <label class="application-form-label">
+              <input type="tel"><span>Контактный телефон</span>
+            </label>
+            <label class="application-form-label">
+              <input type="email"><span>Email</span>
+            </label>
+            <div class="application-form-submit">
+              <button class="calc-btn" type="submit">Отправить</button>
+              <div class="application-form-polic">
+                <label class="application-form-polic-check">
+                  <input type="checkbox"><b></b>
+                </label>
+                <p>Я согласен с <a href="#">условиями обработки персональных данных</a> и <a href="#">политикой конфиденциальности</a></p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="success-message" style="display: none;">
+        <h2 class="modal__title">Ваша заявка принята</h2>
+        <button class="modal__close __js_modal-close" type="button">
+          <svg width="14" height="14">
+            <use xlink:href="images/svg/symbol/sprite.svg#altrix_close"></use>
+          </svg>
+        </button>
+        <div class="modal__content">Спасибо за обращение. Наш менеджер свяжеться с Вами в течение 60 минут</div>
+      </div>
+      <div class="modal modal--tags" id="tags" style="display: none;">
+        <button class="modal__close __js_modal-close" type="button">
+          <svg width="14" height="14">
+            <use xlink:href="images/svg/symbol/sprite.svg#altrix_close"></use>
+          </svg>
+        </button>
+        <div class="modal__content"><a class="tags__item tag" href="#">АСУ</a><a class="tags__item tag" href="#">Сетевая безопасность</a><a class="tags__item tag" href="#">Киберучения</a><a class="tags__item tag" href="#">Blockchain</a><a class="tags__item tag" href="#">Антивирус</a><a class="tags__item tag" href="#">SIEM</a><a class="tags__item tag" href="#">Патч-менеджмент</a><a class="tags__item tag" href="#">Автоматизация</a><a class="tags__item tag" href="#">SIEM</a><a class="tags__item tag" href="#">Киберучения</a><a class="tags__item tag" href="#">АСУ</a><a class="tags__item tag" href="#">Blockchain</a><a class="tags__item tag" href="#">Киберучения</a><a class="tags__item tag" href="#">Сетевая безопасность</a><a class="tags__item tag" href="#">Автоматизация</a><a class="tags__item tag" href="#">Патч-менеджмент</a><a class="tags__item tag" href="#">Антивирус</a><a class="tags__item tag" href="#">Патч-менеджмент</a><a class="tags__item tag" href="#">АСУ</a><a class="tags__item tag" href="#">Blockchain</a><a class="tags__item tag" href="#">Киберучения</a><a class="tags__item tag" href="#">Сетевая безопасность</a><a class="tags__item tag" href="#">Автоматизация</a><a class="tags__item tag" href="#">Патч-менеджмент</a><a class="tags__item tag" href="#">Антивирус</a><a class="tags__item tag" href="#">Патч-менеджмент</a>
+        </div>
+      </div>
+      <div class="cookie-confirm">
+        <div class="cookie-confirm__container container">
+          <div class="cookie-confirm__title">Мы используем фалы Cookie</div>
+          <button class="cookie-confirm__btn __js_cookie-confirm" type="button">Хорошо</button>
+          <div class="cookie-confirm__text">Эти файлы cookie необходимы для функционирования веб-сайта и не могут быть отключены в наших системах. Как правило, они активируются только в ответ на ваши действия, аналогичные запросу услуг, такие как настройка уровня конфиденциальности, вход в систему или заполнение форм. Вы можете настроить браузер таким образом, чтобы он блокировал эти файлы cookie или уведомлял вас об их использовании, но в таком случае возможно, что некоторые разделы веб-сайта не будут работать.</div>
+        </div>
+      </div>
     </div>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>

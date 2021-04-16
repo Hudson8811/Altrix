@@ -176,9 +176,9 @@
         padding-bottom: 11px;
         border-color: $color-grey-e7;
 
-        @include respond-to("phablet") {
+        /*@include respond-to("phablet") {
           border-radius: 0 5px 5px 0;
-        }
+        }*/
 
         &::placeholder {
           color: $color-grey-c6;

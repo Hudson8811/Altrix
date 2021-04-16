@@ -51,33 +51,8 @@ section.contacts-section
             label.application-form-polic-check
               input(type="checkbox")
               b
-            
+
             p Я согласен с <a href="#">условиями обработки персональных данных</a> и <a href="#">политикой конфиденциальности</a>
-          
-          button.calc-btn Отправить
-   
-      //-form(action="#", method="post") 
-        label.contacts-section__form-field.field
-          span.field__hint ФИО
-          input(type="text", name="name")
+          // класс .__js_demo-modal-success-message и атрибут data-src для демонстрацции модального окна с сообщением об успешной отправки формы
+          button(type="submit", data-src="#success-message").__js_demo-modal-success-message.calc-btn Отправить
         
-        label.contacts-section__form-field.contacts-section__form-field--half.field
-          span.field__hint Контактный телефон
-          input(type="tel", name="tel")
-        
-        label.contacts-section__form-field.contacts-section__form-field--half.field
-          span.field__hint Email
-          input(type="email", name="email")
-        
-        
-        label.contacts-section__form-field.field
-          span.field__hint Название компании
-          input(type="text", name="company")
-        
-        label.contacts-section__form-field.field
-          span.field__hint Что Вас интересует?
-          textarea(name="message") 
-        
-        button.contacts-section__form-send.button.button--large(type="submit") Отправить
-      
-      //-.contacts-section__form-bottom Нажимая на кнопку «Отправить» вы соглашаетсь с <a href="#">условиями обработки персональных данных</a> и <a href="#">политикой конфиденциальности</a>
